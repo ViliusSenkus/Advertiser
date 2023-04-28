@@ -2,16 +2,16 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
-//React router dom
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-//Layoutas
+
 import MainLayout from './layouts/MainLayout';
 
-//Kontekstas
+
 import MainContext from './context/MainContext';
 
-//Puslapiai
+
 import Advertises from './pages/client/Advertises'
 import Category from './pages/client/Category';
 import Login from './pages/Login';
@@ -24,7 +24,6 @@ import EditAdv from './pages/admin/editAdv';
 import Categories from './pages/admin/Categories';
 import NewCategory from './pages/admin/CategoriesNew';
 import EditCategory from './pages/admin/CategoriesEdit';
-// import Orders from './pages/admin/Orders';
 
 function App() {
 
@@ -67,20 +66,15 @@ function App() {
               <Route path="/" element={<Advertises />} />
               <Route path="/category/:id" element={<Category />} />
               
-              <Route path= "admin/" element={<AdminAdv />} />
-              <Route path="admin/newadv/" element={<NewAdv />} />
-              <Route path="admin/editAdv/:id" element={<EditAdv />} />
-              <Route path="admin/categories" element={<Categories />} />
-              <Route path="admin/new-category" element={<NewCategory />} />
-              <Route path="admin/editcategory/:id" element={<EditCategory />} />
               {user ?
                 <Route path="/admin">
-                  {/* <Route index element={<Advertises />} />
-                  
-                  
-                  
-                  
-                  */}
+                  <Route index element={<AdminAdv />} />
+                  {/* <Route path= "/" element={<AdminAdv />} /> */}
+                  <Route path="newadv/" element={<NewAdv />} />
+                  <Route path="editAdv/:id" element={<EditAdv />} />
+                  <Route path="categories" element={<Categories />} />
+                  <Route path="new-category" element={<NewCategory />} />
+                  <Route path="editcategory/:id" element={<EditCategory />} />
                 </Route>
               :
                 <>

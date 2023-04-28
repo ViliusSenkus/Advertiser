@@ -27,15 +27,10 @@ Route::group(['prefix' => 'adv'], function(){
     Route::get('/s/{keyword}', [AdvertiseController::class, 'search']);
     Route::get('/{field}/{order}', [AdvertiseController::class, 'order']);
 
-    Route::get('/{id}', [AdvertiseController::class, 'singleAdv'])->where('id', '[0-9]+');
-    Route::post('/', [AdvertiseController::class, 'create']);
-    Route::put('/{id}', [AdvertiseController::class, 'edit'])->where('id', '[0-9]+');
-    Route::delete('/{id}', [AdvertiseController::class, 'delete'])->where('id', '[0-9]+');
-
-    // Route::middleware('auth:sanctum')->get('/{id}', [AdvertiseController::class, 'singleProduct'])->where('id', '[0-9]+');
-    // Route::middleware('auth:sanctum')->post('/', [AdvertiseController::class, 'create']);
-    // Route::middleware('auth:sanctum')->put('/{id}', [AdvertiseController::class, 'edit'])->where('id', '[0-9]+');
-    // Route::middleware('auth:sanctum')->delete('/{id}', [AdvertiseController::class, 'delete'])->where('id', '[0-9]+');
+    Route::middleware('auth:sanctum')->get('/{id}', [AdvertiseController::class, 'singleAdv'])->where('id', '[0-9]+');
+    Route::middleware('auth:sanctum')->post('/', [AdvertiseController::class, 'create']);
+    Route::middleware('auth:sanctum')->put('/{id}', [AdvertiseController::class, 'edit'])->where('id', '[0-9]+');
+    Route::middleware('auth:sanctum')->delete('/{id}', [AdvertiseController::class, 'delete'])->where('id', '[0-9]+');
 	});
 
 Route::group(['prefix' => 'comment'], function(){

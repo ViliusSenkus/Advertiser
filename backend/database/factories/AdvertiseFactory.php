@@ -20,7 +20,7 @@ class AdvertiseFactory extends Factory
             'name' => fake()->name(),
             'description' => fake()->sentence(10, 20),
             'price' => rand(0, 1000).".".rand(0, 99),
-            'photo'	=> fake()->sentence(1),
+            'photo'	=> 'https://picsum.photos/768/768/?q='.rand(0, 5000),
             'city' => fake()->name()
         ];
     }
