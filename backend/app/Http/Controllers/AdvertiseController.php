@@ -48,7 +48,7 @@ class AdvertiseController extends Controller
             
             $data->save();
 
-            $data->category()->attach($request->categories);  
+            $data->category()->attach($request->category);  
             return 'Successfully created';
         } catch(\Exception $e) {
             return response('Can not creat, server error', 500);
@@ -67,7 +67,7 @@ class AdvertiseController extends Controller
     
             $data->save();
 
-            $data->category()->sync($request->categories);
+            $data->category()->sync($request->category);
 
             return 'Advertiser updated successfully';
             

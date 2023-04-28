@@ -13,18 +13,17 @@ import MainContext from './context/MainContext';
 
 //Puslapiai
 import Advertises from './pages/client/Advertises'
-// import Order from './pages/client/Order'; nereikalinga
 import Category from './pages/client/Category';
-// import Login from './pages/Login';
-// import Register from './pages/Register';
+import Login from './pages/Login';
+import Register from './pages/Register';
 import NotFound from './pages/NotFound';
 
 import AdminAdv from './pages/admin/Adv';
 import NewAdv from './pages/admin/NewAdv';
 import EditAdv from './pages/admin/editAdv';
-// import Categories from './pages/admin/Categories';
-// import NewCategory from './pages/admin/CategoriesNew';
-// import EditCategory from './pages/admin/CategoriesEdit';
+import Categories from './pages/admin/Categories';
+import NewCategory from './pages/admin/CategoriesNew';
+import EditCategory from './pages/admin/CategoriesEdit';
 // import Orders from './pages/admin/Orders';
 
 function App() {
@@ -71,23 +70,22 @@ function App() {
               <Route path= "admin/" element={<AdminAdv />} />
               <Route path="admin/newadv/" element={<NewAdv />} />
               <Route path="admin/editAdv/:id" element={<EditAdv />} />
-
-
-              {/* <Route path="/:productId/:productQty" element={<Order />} />      nereikalinga*/}
+              <Route path="admin/categories" element={<Categories />} />
+              <Route path="admin/new-category" element={<NewCategory />} />
+              <Route path="admin/editcategory/:id" element={<EditCategory />} />
               {user ?
                 <Route path="/admin">
-                  {/* <Route index element={<AdminProducts />} />
+                  {/* <Route index element={<Advertises />} />
                   
                   
-                  <Route path="categories" element={<Categories />} />
-                  <Route path="new-category" element={<NewCategory />} />
-                  <Route path="edit-category/:id" element={<EditCategory />} />
-                  <Route path="orders" element={<Orders />} /> */}
+                  
+                  
+                  */}
                 </Route>
               :
                 <>
-                  {/* <Route path="/login" element={<Login />} />
-                  <Route path="/register" element={<Register />} /> */}
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/register" element={<Register />} />
                 </>
               }
 

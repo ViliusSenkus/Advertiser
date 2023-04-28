@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdvertiseController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,3 +59,8 @@ Route::group(['prefix' => 'cat'], function(){
     Route::put('/{id}', [CategoryController::class, 'edit'])->where('id', '[0-9]+');
     Route::delete('/{id}', [CategoryController::class, 'delete'])->where('id', '[0-9]+');
 	});
+
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register']);
+Route::middleware('auth:sanctum')->get('/logout', [AuthController::class, 'logout']);
+Route::middleware('auth:sanctum')->get('/check', [AuthController::class, 'index']);
