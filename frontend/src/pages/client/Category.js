@@ -22,8 +22,8 @@ function Category() {
     <>
         <h1>{data.name}</h1>
         <div className="row">
-          {data.products && data.products.map(product => 
-            <Advertise key={product.id} data={product} />
+          {data.advertise && data.advertise.map(adv => 
+            <Advertise key={adv.id} data={adv} />
           )}
         </div>
     </>

@@ -19,9 +19,9 @@ import Category from './pages/client/Category';
 // import Register from './pages/Register';
 import NotFound from './pages/NotFound';
 
-// import AdminProducts from './pages/admin/Products';
-// import NewProduct from './pages/admin/ProductsNew';
-// import EditProduct from './pages/admin/ProductsEdit';
+import AdminAdv from './pages/admin/Adv';
+import NewAdv from './pages/admin/NewAdv';
+import EditAdv from './pages/admin/editAdv';
 // import Categories from './pages/admin/Categories';
 // import NewCategory from './pages/admin/CategoriesNew';
 // import EditCategory from './pages/admin/CategoriesEdit';
@@ -67,12 +67,18 @@ function App() {
             <Routes>
               <Route path="/" element={<Advertises />} />
               <Route path="/category/:id" element={<Category />} />
+              
+              <Route path= "admin/" element={<AdminAdv />} />
+              <Route path="admin/newadv/" element={<NewAdv />} />
+              <Route path="admin/editAdv/:id" element={<EditAdv />} />
+
+
               {/* <Route path="/:productId/:productQty" element={<Order />} />      nereikalinga*/}
               {user ?
                 <Route path="/admin">
                   {/* <Route index element={<AdminProducts />} />
-                  <Route path="new-product" element={<NewProduct />} />
-                  <Route path="edit-product/:id" element={<EditProduct />} />
+                  
+                  
                   <Route path="categories" element={<Categories />} />
                   <Route path="new-category" element={<NewCategory />} />
                   <Route path="edit-category/:id" element={<EditCategory />} />
