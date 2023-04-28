@@ -17,7 +17,6 @@ import Category from './pages/client/Category';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import NotFound from './pages/NotFound';
-
 import AdminAdv from './pages/admin/Adv';
 import NewAdv from './pages/admin/NewAdv';
 import EditAdv from './pages/admin/editAdv';
@@ -69,7 +68,6 @@ function App() {
               {user ?
                 <Route path="/admin">
                   <Route index element={<AdminAdv />} />
-                  {/* <Route path= "/" element={<AdminAdv />} /> */}
                   <Route path="newadv/" element={<NewAdv />} />
                   <Route path="editAdv/:id" element={<EditAdv />} />
                   <Route path="categories" element={<Categories />} />
@@ -82,14 +80,12 @@ function App() {
                   <Route path="/register" element={<Register />} />
                 </>
               }
-
               <Route path="*" element={<NotFound />} />
             </Routes>
           </MainLayout>
         </MainContext.Provider>
       </BrowserRouter>
     </>
-    // <Products />
   );
 }
 
