@@ -18,8 +18,10 @@ function Advertise({ data }) {
                 alt={data.name}
             />
             <h4>{data.name}</h4>
+            <div><strong>{data.city}</strong></div>
             <div>{data.description}</div>
             <h5>€ {data.price}</h5>
+
 
             {
             /* Perdaryti i isiminima ir komentara.

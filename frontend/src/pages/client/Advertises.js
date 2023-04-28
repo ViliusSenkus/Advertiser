@@ -30,7 +30,7 @@ function Advertises() {
     <>  
         <div className="d-flex justify-content-between align-items-center pb-4">
           <h1>Newest addvertises</h1>
-          <div className="sort d-flex gap-3">
+          {/* <div className="sort d-flex gap-3">
             <select 
               className="form-control"
               onChange={(e) => setSort(e.target.value)}
@@ -47,7 +47,7 @@ function Advertises() {
               <option value="asc">Ascending</option>
               <option value="desc">Descending</option>
             </select>
-          </div>
+          </div> */}
         </div>
         <div className="row">
           {data.map(adv => 
