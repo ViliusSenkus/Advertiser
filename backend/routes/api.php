@@ -42,7 +42,7 @@ Route::group(['prefix' => 'comment'], function(){
     Route::get('/s/{keyword}', [CommentController::class, 'search']);
     Route::get('/{field}/{order}', [CommentController::class, 'order']);
 
-    Route::get('/{id}', [CommentController::class, 'singleAdv'])->where('id', '[0-9]+');
+    Route::get('/{id}', [CommentController::class, 'singleCom'])->where('id', '[0-9]+');
     Route::post('/', [CommentController::class, 'create']);
     Route::put('/{id}', [CommentController::class, 'edit'])->where('id', '[0-9]+');
     Route::delete('/{id}', [CommentController::class, 'delete'])->where('id', '[0-9]+');
@@ -53,7 +53,7 @@ Route::group(['prefix' => 'cat'], function(){
     Route::get('/s/{keyword}', [CategoryController::class, 'search']);
     Route::get('/{field}/{order}', [CategoryController::class, 'order']);
 
-    Route::get('/{id}', [CategoryController::class, 'singleAdv'])->where('id', '[0-9]+');
+    Route::get('/{id}', [CategoryController::class, 'singleCat'])->where('id', '[0-9]+');
     Route::post('/', [CategoryController::class, 'create']);
     Route::put('/{id}', [CategoryController::class, 'edit'])->where('id', '[0-9]+');
     Route::delete('/{id}', [CategoryController::class, 'delete'])->where('id', '[0-9]+');
