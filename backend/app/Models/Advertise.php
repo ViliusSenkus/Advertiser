@@ -13,4 +13,11 @@ class Advertise extends Model
 
     protected $table='advertises';
 	protected $guarded = false;
+
+    public function category() {
+        return $this->belongsToMany(Category::class, 'advertise_categories', 'adv_id', 'category_id');
+    }
+    public function comments() {
+        return $this->belongsToMany(Comment::class, 'advertise_comments', 'adv_id', 'comment_id');
+    }
 }

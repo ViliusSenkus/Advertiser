@@ -13,4 +13,7 @@ class Category extends Model
     protected $table='categories';
 	protected $guarded = false;
     
+    public function advertise() {
+        return $this->belongsToMany(Advertise::class, 'advertise_categories', 'category_id', 'adv_id');
+    }
 }

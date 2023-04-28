@@ -12,4 +12,8 @@ class Comment extends Model
 
     protected $table='comments';
 	protected $guarded = false;
+
+    public function advertise() {
+        return $this->hasOne(Advertise::class, 'advertise_comments', 'comment_id', 'adv_id');
+    }
 }
